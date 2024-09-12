@@ -1,3 +1,5 @@
+/* styles.css */
+
 @import url("https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css");
 * {
   padding: 0;
@@ -141,8 +143,7 @@ main {
   }
 }
 @media (max-width: 425px) {
-  .navbar {
-  }
+ 
 }
 
 /* Hover effect to scale the item */
@@ -297,106 +298,169 @@ main {
     color: #ffffff;
   }
 }
-.aboutme_info2,
-.aboutme_info {
-  font-size: 20px;
-}
-
-@media (max-width: 425px) {
-  .aboutme_info2,
-  .aboutme_info {
-    font-size: 16px;
-  }
-}
-
-.about_main {
+.about {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-}
-
-.about_div {
-  background-color: rgba(255, 255, 255, 0.335);
-  height: fit-content;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  border-radius: 2%;
-  padding: 16px;
-  border: black solid;
-}
-
-@media (max-width: 425px) {
-  .about_div {
-    width: 90%;
-  }
-}
-
-.image_wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 32px 0 0;
-}
-@media (max-width: 425px) {
-  .image_wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.cat_suit {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-
-  position: relative;
-  border: rgba(0, 0, 0, 0.315) solid;
-}
-
-@media (max-width: 425px) {
-  .cat_suit {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-.timeline-container {
-  width: 80%;
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  position: relative;
-  border: 2px solid #000000;
-  background-color: rgba(255, 255, 255, 0.52);
+  max-width: 900px;
+  background-color: #cd9df975;
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0);
+  overflow: hidden;
 }
-@media (max-width: 425px) {
-}
-.timeline-item {
-  margin: 30px 0;
-  padding-left: 30px;
-  position: relative;
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2cm;
 }
 
-.timeline-date {
-  font-size: 18px;
-  font-weight: bold;
+.about-image {
+  flex: 1;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #302d2d89;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 2;
+  padding: 30px;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin: 0;
   color: #000000;
-  margin-bottom: 8px;
-  background-color: rgba(168, 163, 163, 0.794);
-  border-radius: 20px;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 10px 0;
+}
+
+.about-text p {
+  font-size: 4.5mm;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 4em;
+    animation: fadeIn 1.5s ease-out;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateX(-50px); /* Start off to the side */
+    animation: slideIn 1s forwards; /* Trigger animation */
+}
+
+.timeline-item:nth-child(even) {
+    animation: slideInRight 1s forwards;
 }
 
 .timeline-content {
-  background-color: #fcfcfc85;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #444;
+    background-color: rgba(255, 255, 255, 0.704);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation-delay: 0.3s;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.675);
 }
+
+.timeline-content h2 {
+    margin-top: 0;
+    color: #3f51b5;
+}
+
+.timeline-content p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Timeline Circle */
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    background-color: #3f51b5;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.2);
+}
+
+/* Animation */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 body,
 h1,
@@ -482,8 +546,119 @@ a {
 footer {
   background: #ffffff41;
 
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 20px 0;
   margin-top: 40px;
+}
+
+/* Existing media query */
+@media (max-width: 425px) {
+  .navbar a {
+    font-size: 15px;
+  }
+
+  .container__image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack projects in a single column */
+  }
+}
+
+/* Additional media queries for other breakpoints */
+@media (max-width: 768px) {
+  .container__image {
+    height: 250px;
+    width: 250px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about-text {
+    padding: 20px;
+  }
+
+  .navbar {
+    padding: 8px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  header p {
+    font-size: 1.3em;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for medium screens */
+  }
+}
+
+/* Media query for larger screens (for better handling on tablets and small desktops) */
+@media (min-width: 1024px) {
+  .container__image {
+    height: 300px;
+    width: 300px;
+  }
+
+  .about {
+    flex-direction: row;
+  }
+
+  .about-text {
+    padding: 30px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+
+  header h1 {
+    font-size: 4em;
+  }
+
+  header p {
+    font-size: 1.5em;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* More space on larger screens */
+  }
 }
